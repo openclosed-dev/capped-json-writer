@@ -4,7 +4,7 @@
 
 * OpenJDK 21
 
-## How to build
+## How to Build
 
 ```
 ./gradlew build
