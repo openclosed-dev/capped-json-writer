@@ -1,0 +1,19 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.5.7'
+}
+
+java.sourceCompatibility = JavaVersion.VERSION_21
+compileJava.options.encoding = 'UTF-8'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation platform(org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES)
+    implementation 'org.springframework.boot:spring-boot-starter-batch'
+    implementation 'org.eclipse.parsson:parsson:1.1.7'
+
+    runtimeOnly 'com.h2database:h2'
+}
