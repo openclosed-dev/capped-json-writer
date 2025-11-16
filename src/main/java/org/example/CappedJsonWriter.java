@@ -60,7 +60,7 @@ public class CappedJsonWriter implements ItemWriter<JsonObject> {
         flush();
     }
 
-    public void writeJsonObject(JsonObject object) {
+    private void writeJsonObject(JsonObject object) {
 
         final var serialized = serializeJsonObject(object);
         final var objectSize = serialized.length;
@@ -81,7 +81,7 @@ public class CappedJsonWriter implements ItemWriter<JsonObject> {
         LOG.info("Current buffer size: {} bytes", currentSize);
     }
 
-    public void flush() {
+    private void flush() {
         if (jsonBuffer.size() > 0) {
             flushBuffer();
         }
